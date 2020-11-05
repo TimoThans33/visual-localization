@@ -4,7 +4,7 @@ throw away code for the visual localization project.
 A simple real-time streaming protocal making optimal use of the NVIDA hardware with gstreamer.
 ### Dependecies:
 ```
-sudo apt-get install libgstrtspserver-1.0 libgsreamer1.0-dev
+apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-doc gstreamer1.0-tools gstreamer1.0-x gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-gtk3 gstreamer1.0-qt5 gstreamer1.0-pulseaudio
 ```
 For the bassler camera you need the gstreamer plug-ins for bassler
 ```

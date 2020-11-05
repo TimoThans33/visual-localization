@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Visual Localization</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+        <h1>Visual Localization Design Document</h1>
+        <p>This document describes the proposed software architectures for indoor localization of autonomous machines. 
+        </p>
+        </div>
+        <h3>Introduction</h3>
+        <p>
+             This project aims to localize autonomous robots using image processing algorithms. I have heard we sometimes do image processing at Prime Vision ;p
+             It has to at least include the following features:
+        </p>
+        <ul>
+            <li>Optic Flow for speed estimation of the Robot</li>
+            <li>Absolute Positioning</li>
+            <li>No Need for seperate devices (except for maybe an accesspoint and server) or adjustments on the environment</li>
+            <li>Less then 5mm precission</li>
+            <li>More than 30 updates per second</li>
+            <li>Ability to learn while driving</li>
+            <li>Algorithms rather implemented from scratch</li>
+            <li>Cheaper than 2000$</li>
+        </ul>
+        <h3>Pre-liminary work</h3>
+        <p>
+            We have build three set-ups for testing. First is a PCB design for the Ilumination. The second is a cover for the PCB design and camera.
+            The third is a cart that can be either pushed or driven with a controller. The camera in the set-up is a basler camera.
+            The images appear to be of a good enough quality to do something. But this design is not final.
+        </p>
+        <p>
+            Furtheremore there is some throw-away code for real-time video streaming to see the feed on your computer
+        </p>
+        <video width="320" height="240" controls>
+            <source src="Videos/rtsp.mp4" type="video/mp4">
+            <source src="Videos/rtsp.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+        </video>
+        <h3>Proposed solutions</h3>
+        <div class="row">
+            <div class="col-sm-4">
+                <h4>Optic Flow Algorithm</h4>
+                <p>
+                    Can both be used with a floor and camera pointed to the ceiling.
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <h4>Image Stitching Algorithm with SIFT</h4>
+                <p>Maybe in combination with WLAN based Localization. Could be useful with both a floor and ceiling camera</p>
+            </div>
+            <div class="col-sm-4">
+                <h4>K Means Clustering</h4>   
+                <p>Maybe in combination with WLAN based localization and could also be used with both a floor and cealing camera</p>
+            </div>
+            <div class="col-sm-4">
+                <h4>Relative Positioning with depth data</h4>
+                <p>True swarming algorithm. Determine its position within the fleet of robots.</p>
+            </div>
+    </div>
+    <h3>Milestones</h3>
+    <ul>
+        <li>PCB design v0.1 + Mechanical Design v0.1 (June)</li>
+        <li>Real Time Video Streaming (June)</li>
+    </ul>
+    <h3>Future work</h3>
+    <ul>
+        <li>Decide what technique we are going with</li>
+        <li>Better hardware design</li>
+        <li>Optimizing Costs and Processing speed (maybe FPGA? Optimized CUDA code)</li>
+    </ul>
+</body>
+</html>
